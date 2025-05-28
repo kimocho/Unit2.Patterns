@@ -23,6 +23,14 @@ export function sumToN(n) {
  */
 export function factorial(n) {
   // TODO
+  if (typeof n !== 'number') return 'NaN';
+  else if (n < 0) return undefined;
+  else if (n === 0) return 1;
+  let product = 1;
+  for (let i = 0; i < n; i++) {
+    product *= i;
+  }
+  return product;
 }
 
 /**
@@ -33,6 +41,13 @@ export function factorial(n) {
  */
 export function buildNArray(n) {
   // TODO
+  if (typeof n !== 'number') return 'null';
+  else if (n <= 0) return [];
+  let finalArray = [];
+  for (let i = 1; i <= n; i++) {
+    finallArray.push(i);
+  }
+  return finalArray;
 }
 
 /**
@@ -41,6 +56,9 @@ export function buildNArray(n) {
  */
 export function getLongestString(strings) {
   // TODO
+  return strings.reduce((longestString, current) => {
+    if (current.length > longestString.length) longestString = current;
+  }, strings[0]);
 }
 
 /**
@@ -49,6 +67,11 @@ export function getLongestString(strings) {
  */
 export function countPresent(attendance) {
   // TODO
+  let counter = 0;
+  for (let i = 0; i < attendance.length; i++) {
+    if (attendance[i]) count++;
+  }
+  return counter;
 }
 
 /**
@@ -63,4 +86,13 @@ export function countPresent(attendance) {
  */
 export function complementDNA(dna) {
   // TODO
+  if (typeof dna !== 'string') return 'null';
+  let complementaryString = '';
+  for (let i = 0; i < dna.length; i++) {
+    if (dna[i] === 'A') complementaryString += 'T';
+    else if (dna[i] === 'T') complementaryString += 'A';
+    else if (dna[i] === 'C') complementaryString += 'G';
+    else if (dna[i] === 'G') complementaryString += 'C';
+  }
+  return complementaryString;
 }

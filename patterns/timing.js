@@ -20,6 +20,10 @@ export function isSongInPlaylist(playlist, song) {
  */
 export function isAllEven(numbers) {
   // TODO
+  if (numbers.length === 0) return undefined;
+  return numbers.every(elem => {
+    return (elem % 2 === 0)
+  });
 }
 
 /**
@@ -33,4 +37,5 @@ export function isAllEven(numbers) {
  */
 export function haveEnoughFood(backpack, people) {
   // TODO
+  return backpack.food >= people;
 }
