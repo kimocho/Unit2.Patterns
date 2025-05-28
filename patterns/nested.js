@@ -40,9 +40,9 @@ export function makeTriangle(size) {
   if (typeof size !== 'number') return null;
   if (size <= 0) return [];
   let triangleArray = [];
-  for (let i = 0; i < size; i++) {
+  for (let i = 1; i <= size; i++) {
     let innerArray = [];
-    for (let j = 0; j < triangleArray.length; j++) {
+    for (let j = 0; j < i; j++) {
       innerArray.push('-');
     }
     triangleArray.push(innerArray);
